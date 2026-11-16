@@ -3,8 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Explore sub-Nyquist affine antenna switching: design two feasible sweeps and watch a single target's actual spatial point-spread functions shift with Doppler." />
-  <title>Affine Switching Lab | Interactive paper companion</title>
+  <meta name="description" content="Explore sub-Nyquist affine antenna switching for ISAC. Design two antenna sweeps and see Doppler shift real single-target spatial point-spread functions." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Alireza Pourafzal" />
+  <link rel="canonical" href="https://alirezap94.github.io/subnyquist-affine-switching/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Affine Switching Lab" />
+  <meta property="og:title" content="Sub-Nyquist Affine Antenna Switching | Interactive Angle–Doppler Lab" />
+  <meta property="og:description" content="Explore sub-Nyquist affine antenna switching for ISAC. Design two antenna sweeps and see Doppler shift real single-target spatial point-spread functions." />
+  <meta property="og:url" content="https://alirezap94.github.io/subnyquist-affine-switching/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sub-Nyquist Affine Antenna Switching | Interactive Angle–Doppler Lab" />
+  <meta name="twitter:description" content="Explore sub-Nyquist affine antenna switching for ISAC. Design two antenna sweeps and see Doppler shift real single-target spatial point-spread functions." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://alirezap94.github.io/subnyquist-affine-switching/#webpage","url":"https://alirezap94.github.io/subnyquist-affine-switching/","name":"Sub-Nyquist Affine Antenna Switching | Interactive Angle–Doppler Lab","description":"Explore sub-Nyquist affine antenna switching for ISAC. Design two antenna sweeps and see Doppler shift real single-target spatial point-spread functions.","inLanguage":"en","about":{"@id":"https://doi.org/10.31224/8383"},"mainEntity":{"@id":"https://alirezap94.github.io/subnyquist-affine-switching/#lab"}},{"@type":"SoftwareApplication","@id":"https://alirezap94.github.io/subnyquist-affine-switching/#lab","name":"Affine Switching Lab","url":"https://alirezap94.github.io/subnyquist-affine-switching/","applicationCategory":"EducationalApplication","operatingSystem":"Any web browser","isAccessibleForFree":true,"description":"Interactive educational demonstration of sub-Nyquist affine antenna switching with two antenna sweeps and noiseless single-target spatial point-spread functions.","citation":{"@id":"https://doi.org/10.31224/8383"}},{"@type":"ScholarlyArticle","@id":"https://doi.org/10.31224/8383","name":"Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle-Doppler Estimation","identifier":"10.31224/8383","url":"https://doi.org/10.31224/8383","author":[{"@type":"Person","name":"Alireza Pourafzal"},{"@type":"Person","name":"Nitin Jonathan Myers"},{"@type":"Person","name":"Dario Tagliaferri"},{"@type":"Person","name":"Musa Furkan Keskin"},{"@type":"Person","name":"Henk Wymeersch"}]}]}</script>
+  <title>Sub-Nyquist Affine Antenna Switching | Interactive Angle–Doppler Lab</title>
   <style>
     :root {
       color-scheme: light;
@@ -108,6 +121,13 @@
     .formula sub { font-size: 60%; }
     .detail { margin-top: 14px; padding: 15px 18px; border-radius: 11px; background: #eef6f7; color: #41626e; font-size: 12px; line-height: 1.65; border: 1px solid #dbecee; }
     .detail b { color: #1c4f5f; }
+    .paper-panel { display: flex; align-items: center; justify-content: space-between; gap: 26px; padding: 24px 27px; }
+    .paper-copy { max-width: 800px; }
+    .paper-title { font-size: 17px; font-weight: 760; line-height: 1.4; letter-spacing: -.018em; margin: 6px 0 9px; }
+    .paper-authors { font-size: 12px; color: #526d79; line-height: 1.7; margin: 0; }
+    .paper-venue { font-size: 12px; color: #67818b; margin: 7px 0 0; }
+    .paper-panel .btn { flex-shrink: 0; }
+    @media (max-width: 660px) { .paper-panel { padding: 18px; flex-direction: column; align-items: stretch; gap: 16px; } .paper-panel .btn { align-self: start; } }
     footer { border-top: 1px solid var(--line); padding: 23px 0 36px; margin-top: 18px; background: #fff; color: #6b8089; font-size: 12px; }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
     .warning { display: none; padding: 10px 13px; margin-bottom: 14px; color: #994a20; background: #fff4e7; border: 1px solid #eedcc6; border-radius: 9px; font-size: 12px; }
@@ -122,7 +142,7 @@
   <header>
     <div class="wrap topbar">
       <a class="logo" href="#top" aria-label="Affine Switching Lab home"><span class="logo-icon">∿</span> Affine Switching Lab</a>
-      <nav class="topnav" aria-label="Main navigation"><a href="#how">The idea</a><a href="#design">1. Design</a><a href="#explore">2. Explore</a></nav>
+      <nav class="topnav" aria-label="Main navigation"><a href="#how">The idea</a><a href="#design">1. Design</a><a href="#explore">2. Explore</a><a href="#paper">The paper</a></nav>
     </div>
   </header>
   <main id="top" class="wrap">
@@ -130,8 +150,8 @@
       <div>
         <div class="eyebrow">Interactive companion · Sub-Nyquist sensing</div>
         <h1>See Doppler <em>move</em> spatial peaks.</h1>
-        <p>With a single RF chain, an antenna array is sampled one element at a time. Choose two affine switching sweeps, then move a target in Doppler and watch how its spatial point-spread functions shift differently.</p>
-        <div class="hero-actions"><a class="btn primary" href="#design">Start with the antenna →</a><a class="btn" href="#explore">Jump to the spectra ↓</a></div>
+        <p>Explore sub-Nyquist affine antenna switching for ISAC with a single RF chain. Design two antenna sweeps, change a target's Doppler, and see the calculated spatial point-spread functions shift differently.</p>
+        <div class="hero-actions"><a class="btn primary" href="#design">Start with the antenna →</a><a class="btn" href="#explore">Jump to the spectra ↓</a><a class="btn" href="#paper">Read the research ↗</a></div>
         <div class="pillrow"><span class="pill">One moving target</span><span class="pill">Two affine sweeps</span><span class="pill">Mathematically computed PSFs</span></div>
       </div>
       <div class="hero-card" aria-label="Illustration of two slope-dependent spectral shifts">
@@ -196,6 +216,19 @@
       <div class="legend"><div class="legend-left"><span><i class="dot blue"></i> Sweep 1</span><span><i class="dot amber"></i> Sweep 2</span><span>Bright = higher PSF power</span></div><span>Shared axes and power scale · −25 to 0 dB</span></div>
       <div class="card math-panel"><div><h3>Why do the peaks move?</h3><p>In affine sweep <i>s</i>, the local sampling time is <i>p = a<sub>s</sub>i + b<sub>s</sub>j + c<sub>s</sub></i>. The Doppler phase becomes a spatial-frequency shift. Two different slope pairs create two different peak positions for the same target. At zero Doppler, both spectra peak at the physical spatial frequency.</p></div><div class="formula">θ<sub>x,s</sub> = ω<sub>x</sub> + a<sub>s</sub>γ<br />θ<sub>y,s</sub> = ω<sub>y</sub> + b<sub>s</sub>γ<br /><span style="font-size:13px;color:#62808d">γ = 2πνT</span></div></div>
       <div class="detail"><b>What is being plotted?</b> Each heatmap is the exact noiseless single-target, normalized matched-filter PSF evaluated on a spatial-frequency grid for the chosen finite switching schedule: <span style="font-family:Cambria,Georgia,serif">P<sub>s</sub>(k) = |(1/M<sub>s</sub>) Σ<sub>p</sub> exp(j2π[(k<sub>x,s</sub> − k<sub>x</sub>)i<sub>p</sub>/N<sub>x</sub> + (k<sub>y,s</sub> − k<sub>y</sub>)j<sub>p</sub>/N<sub>y</sub>])|²</span>. The combined panel is a color overlay of the two individually calculated PSFs, <em>not</em> a jointly estimated spectrum. No target detection or full angle–Doppler estimator is used.</div>
+    </section>
+
+    <section id="paper" class="lab-section" aria-labelledby="paper-title">
+      <div class="section-head"><div><div class="step">Further reading</div><h2 id="paper-title">The research behind the lab</h2><p>Want the derivation, slope design, and estimator? Start with the original paper.</p></div></div>
+      <div class="card paper-panel">
+        <div class="paper-copy">
+          <div class="eyebrow">Research paper</div>
+          <p class="paper-title">Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle–Doppler Estimation</p>
+          <p class="paper-authors">Alireza Pourafzal · Nitin Jonathan Myers · Dario Tagliaferri · Musa Furkan Keskin · Henk Wymeersch</p>
+          <p class="paper-venue">Open research preprint · DOI: <a href="https://doi.org/10.31224/8383" target="_blank" rel="noopener noreferrer">10.31224/8383</a></p>
+        </div>
+        <a class="btn primary" href="https://doi.org/10.31224/8383" target="_blank" rel="noopener noreferrer" aria-label="Read the original research paper via DOI (opens in a new tab)">Read the paper ↗</a>
+      </div>
     </section>
   </main>
   <footer><div class="wrap"><span>Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle–Doppler Estimation</span><span>Educational companion · Self-contained · Runs entirely in your browser</span></div></footer>
