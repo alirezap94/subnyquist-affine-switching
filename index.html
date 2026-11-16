@@ -59,6 +59,9 @@
     .illustration { min-height: 212px; display: grid; align-items: center; }
     .hero-card svg { width: 100%; height: auto; }
     .hero-card .explainer { color: #5a7078; font-size: 12px; line-height: 1.6; margin-top: 5px; }
+    .paper-cite { margin-top: 17px; font-size: 12px; color: #57727c; line-height: 1.55; max-width: 650px; }
+    .paper-cite a { color: #047a88; font-weight: 650; text-decoration: underline; text-underline-offset: 2px; }
+    .paper-cite cite { font-style: normal; }
     .pillrow { display: flex; align-items: center; gap: 11px; flex-wrap: wrap; margin-top: 25px; color: #586d78; font-size: 12px; }
     .pill { background: white; padding: 7px 10px; border: 1px solid #d6e3e5; border-radius: 999px; font-weight: 650; }
     section.lab-section { padding: 27px 0 46px; }
@@ -142,7 +145,7 @@
   <header>
     <div class="wrap topbar">
       <a class="logo" href="#top" aria-label="Affine Switching Lab home"><span class="logo-icon">∿</span> Affine Switching Lab</a>
-      <nav class="topnav" aria-label="Main navigation"><a href="#how">The idea</a><a href="#design">1. Design</a><a href="#explore">2. Explore</a><a href="#paper">The paper</a></nav>
+      <nav class="topnav" aria-label="Main navigation"><a href="#how">The idea</a><a href="#design">1. Design</a><a href="#explore">2. Explore</a><a href="https://doi.org/10.31224/8383" target="_blank" rel="noopener noreferrer" aria-label="Read the paper (opens in new tab)">Paper ↗</a></nav>
     </div>
   </header>
   <main id="top" class="wrap">
@@ -151,7 +154,8 @@
         <div class="eyebrow">Interactive companion · Sub-Nyquist sensing</div>
         <h1>See Doppler <em>move</em> spatial peaks.</h1>
         <p>Explore sub-Nyquist affine antenna switching for ISAC with a single RF chain. Design two antenna sweeps, change a target's Doppler, and see the calculated spatial point-spread functions shift differently.</p>
-        <div class="hero-actions"><a class="btn primary" href="#design">Start with the antenna →</a><a class="btn" href="#explore">Jump to the spectra ↓</a><a class="btn" href="#paper">Read the research ↗</a></div>
+        <div class="hero-actions"><a class="btn primary" href="#design">Start with the antenna →</a><a class="btn" href="#explore">Jump to the spectra ↓</a><a class="btn" href="https://doi.org/10.31224/8383" target="_blank" rel="noopener noreferrer">Read the paper ↗</a></div>
+        <div class="paper-cite">Companion to <a href="https://doi.org/10.31224/8383" target="_blank" rel="noopener noreferrer"><cite>Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle–Doppler Estimation</cite></a> · DOI: 10.31224/8383</div>
         <div class="pillrow"><span class="pill">One moving target</span><span class="pill">Two affine sweeps</span><span class="pill">Mathematically computed PSFs</span></div>
       </div>
       <div class="hero-card" aria-label="Illustration of two slope-dependent spectral shifts">

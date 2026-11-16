@@ -1,22 +1,52 @@
-# Sub-Nyquist Affine Switching Interactive Lab
+# Affine Switching Lab
 
-Self-contained educational website supporting the paper **Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle–Doppler Estimation**.
+**Interactive educational companion to**
 
-Paper DOI: https://doi.org/10.31224/8383
-Live website: https://alirezap94.github.io/subnyquist-affine-switching/
+**Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle–Doppler Estimation**  
+Alireza Pourafzal, Nitin Jonathan Myers, Dario Tagliaferri, Musa Furkan Keskin, and Henk Wymeersch.
 
-## Publication
+[**Try the interactive lab**](https://alirezap94.github.io/subnyquist-affine-switching/) · [**Read the paper (DOI: 10.31224/8383)**](https://doi.org/10.31224/8383)
 
-The `index.html` file is the complete interactive lab with two feasible affine switching sweeps, single-target noiseless finite-schedule PSFs, and a combined PSF overlay. It does not implement a full estimator or the paper's offline optimization. No external JavaScript libraries or build tools are required.
+## Overview
 
-This version includes the original paper's DOI prominently in the page, search-focused title and description, a canonical URL, crawl directives, social sharing metadata, and Schema.org structured data connecting the application to the paper.
+The lab illustrates how affine antenna switching turns a target's Doppler phase progression into a deterministic shift in the spatial-frequency domain. A single receiver RF chain samples one antenna element at a time, using two different affine sweeps. Different sweep slopes produce different spectral shifts for the same physical target.
 
-To publish this ZIP on GitHub Pages, upload `index.html` and `sitemap.xml` to the root of the `alirezap94/subnyquist-affine-switching` repository (or use the connected GitHub integration). No `robots.txt` is included because GitHub Pages project repositories are hosted below a URL prefix; a `robots.txt` inside that prefix would not control the domain root's robots directives.
+The goal is to communicate the central idea of the paper through a lightweight, interactive visualization. This is a teaching companion, **not** a full implementation of the estimator.
 
-## Indexing follow-up
+## Explore the concept
 
-1. In Google Search Console, add the URL-prefix property https://alirezap94.github.io/subnyquist-affine-switching/ and complete ownership verification (typically via an HTML verification file uploaded to the repository, or use an available verification method).
-2. Submit the sitemap https://alirezap94.github.io/subnyquist-affine-switching/sitemap.xml and request indexing for the home page.
-3. Optionally submit the sitemap to Bing Webmaster Tools and link to the lab from the paper/preprint or research profile.
+1. **Design two switching sweeps.** Choose the planar-array dimensions, sampling budget, maximum Doppler, and switching interval. The demo generates two distinct feasible affine antenna-switching schedules and shows their selected antenna positions.
+2. **Move a target in Doppler.** Change the target Doppler and inspect the two single-target spatial point-spread functions (PSFs), together with a combined view that overlays both responses.
+3. **Compare the shifts.** At zero Doppler the main peaks overlap. With nonzero Doppler the affine sweep slopes move the peaks differently.
 
-Search engine discovery and ranking are not instantaneous or guaranteed by metadata alone.
+## Mathematical foundation
+
+For an antenna selected at index `(i_m, j_m)` and time index `m`, the noiseless single-target switched measurement is
+
+```text
+y_m = alpha * exp(j * (omega_x*i_m + omega_y*j_m + gamma*m))
+gamma = 2*pi*nu*T
+```
+
+Within sweep `s`, the affine time relation is `p = a_s*i + b_s*j + c_s`, giving shifted spatial frequencies
+
+```text
+theta_x,s = omega_x + a_s*gamma
+theta_y,s = omega_y + b_s*gamma
+```
+
+The PSF panels evaluate a normalized matched-filter response over spatial-frequency grids for the actual selected antennas of each sweep. The page does not run a peak detector, add measurement noise, recover physical angle/Doppler parameters, or solve the paper's offline spatial-prior optimization.
+
+## Contents
+
+- `index.html`: full standalone interactive lab, including the styles and JavaScript.
+- `sitemap.xml`: site map for search engine discovery.
+- `README.md`: project description, mathematical context, and citation.
+
+The site is static, with no external JavaScript dependencies and no build step. It is hosted on GitHub Pages.
+
+## Citation
+
+Pourafzal, A., Myers, N. J., Tagliaferri, D., Keskin, M. F., and Wymeersch, H., *Sub-Nyquist Affine Antenna Switching for Low-Complexity Angle–Doppler Estimation*.
+
+https://doi.org/10.31224/8383
